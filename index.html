@@ -1,11 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="ms">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rekod Perkembangan Murid</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>Web App Rekod Perkembangan Murid</h1>
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <h1>🔬 Rekod Perkembangan Murid</h1>
+        <p>Sains Tahun 1 Cempaka 2026</p>
+    </header>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard">
+
+        <section class="card">
+            <h2>👩🏻‍🏫 Guru</h2>
+            <p>Nurul Amni Athirah Binti Faudzi</p>
+        </section>
+
+        <section class="card">
+            <h2>👨‍🎓 Bilangan Murid</h2>
+            <p id="studentCount">39 Orang</p>
+        </section>
+
+        <section class="card">
+            <h2>📚 Unit Semasa</h2>
+            <p id="currentUnit">Belum dipilih</p>
+        </section>
+
+    </div>
+
+    <!-- PENTAKSIRAN -->
+    <section class="card">
+
+        <h2>📝 Pentaksiran</h2>
+
+       <select id="unit">
+    <option value="Unit 1 - Kemahiran Saintifik">Unit 1 - Kemahiran Saintifik</option>
+    <option value="Unit 2 - Manusia">Unit 2 - Manusia</option>
+    <option value="Unit 3 - Haiwan">Unit 3 - Haiwan</option>
+    <option value="Unit 4 - Tumbuhan">Unit 4 - Tumbuhan</option>
+    <option value="Unit 5 - Magnet">Unit 5 - Magnet</option>
+    <option value="Unit 6 - Cahaya dan Gelap">Unit 6 - Cahaya dan Gelap</option>
+    <option value="Unit 7 - Elektrik">Unit 7 - Elektrik</option>
+    <option value="Unit 8 - Penyerapan">Unit 8 - Penyerapan</option>
+    <option value="Unit 9 - Bumi">Unit 9 - Bumi</option>
+</select>
+
+        <br><br>
+
+        <label>Standard Pembelajaran</label><br>
+        <select id="sp">
+            <option>1.1.1 Mengenal pasti ...</option>
+            <option>1.1.2 Menjelaskan ...</option>
+        </select>
+
+        <br><br>
+
+<label><strong>Tetapkan Semua TP</strong></label>
+
+<div class="tp-buttons">
+
+    <button id="tp1All">TP1</button>
+    <button id="tp2All">TP2</button>
+    <button id="tp3All">TP3</button>
+    <button id="tp4All">TP4</button>
+    <button id="tp5All">TP5</button>
+    <button id="tp6All">TP6</button>
+    <button id="clearAll">Reset</button>
+
+</div>
+
+        <br><br>
+
+        <table id="assessmentTable">
+
+            <thead>
+                <tr>
+                    <th>Bil</th>
+                    <th>Nama</th>
+                    <th>TP</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+        <br>
+
+        <button id="saveAssessment">💾 Simpan</button>
+
+    </section>
+
+    <!-- REKOD -->
+    <section class="card">
+
+        <h2>📋 Rekod Pentaksiran</h2>
+
+        <button id="loadRecords">Papar Rekod</button>
+        <button id="showData">📋 Lihat Data Simpanan</button>
+
+        <pre id="output"></pre>
+
+        <table id="recordTable">
+
+            <thead>
+                <tr>
+                    <th>Tarikh</th>
+                    <th>Unit</th>
+                    <th>SP</th>
+                    <th>Bil. Murid</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+    </section>
+
+    <!-- SENARAI MURID -->
+    <section class="card">
+
+        <h2>👨‍🎓 Senarai Murid</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari nama murid...">
+
+        <br><br>
+
+        <div class="import-section">
+
+            <input
+                type="file"
+                id="excelFile"
+                accept=".xlsx,.xls">
+
+            <button id="importBtn">📥 Import Excel</button>
+
+            <button id="resetBtn">🔄 Reset</button>
+
+        </div>
+
+        <br>
+
+        <table id="studentTable">
+
+            <thead>
+
+                <tr>
+
+                    <th>Bil</th>
+                    <th>Nama Murid</th>
+                    <th>Jantina</th>
+                    <th>Rekod</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="students.js"></script>
+<script src="spData.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
